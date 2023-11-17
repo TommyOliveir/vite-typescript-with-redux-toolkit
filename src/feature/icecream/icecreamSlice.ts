@@ -16,13 +16,17 @@ const icecreamSlice = createSlice({
       state.numOfIcecreams += action.payload;
     },
   },
+
+  
   //   extraReducers; {
   //     ['cake/ordered']: (state) => {
   //         state.numOfIcecreams--
   //     },
   //   },
+
+  //extra reducers
   extraReducers: (builder) => {
-    //builder first argument is the action type, second is a function with state and payload argument
+    //builder first argument is the action type, second is a function with state and payload argument in this case we only put state
     builder.addCase(cakeOrdered, (state) => {
       state.numOfIcecreams--;
     });
