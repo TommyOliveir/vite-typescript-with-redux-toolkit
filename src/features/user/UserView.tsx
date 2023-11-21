@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
 import { fetchUsers } from "./userSlice";
 
 export const UserView = () => {
-  const user = useSelector((state) => state.user);
-  const dispatch = useDispatch();
+  const user = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
@@ -18,7 +19,7 @@ export const UserView = () => {
       {!user.loading && user.users.length ? (
         <ul>
           {user.users.map((user) => (
-            <li key={user.id}>{user.name}</li>
+            <li key={user.id}>{user.name} {user.username}</li>
           ))}
         </ul>
       ) : null}

@@ -1,7 +1,7 @@
 import './App.css'
-import { CakeView } from './feature/cake/CakeView'
-import { IcecreamView } from './feature/icecream/icecreamView'
-import { UserView } from './feature/user/UserView'
+import { CakeView } from './features/cake/CakeView'
+import { IcecreamView } from './features/icecream/IcecreamView'
+import { UserView } from './features/user/UserView'
 
 function App() {
  
